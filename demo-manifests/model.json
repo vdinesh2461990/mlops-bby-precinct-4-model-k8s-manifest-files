@@ -8,7 +8,7 @@
         "name": "bby-precinct-4-serv"
     },
     "spec": {
-        "name": "bby-precinct-4-v2-464ac4cc-dpl",
+        "name": "bby-precinct-4-v3-cdf4c04d-dpl",
         "oauth_key": "oauth-key",
         "oauth_secret": "oauth-secret",
         "predictors": [
@@ -17,7 +17,7 @@
                     "spec": {
                         "containers": [
                             {
-                                "image": "127.0.0.1:5000/vdinesh1990/bby-precinct-4:v2",
+                                "image": "127.0.0.1:5000/vdinesh1990/bby-precinct-4:v3",
                                 "imagePullPolicy": "IfNotPresent",
                                 "name": "model",
                                 "resources": {
@@ -38,7 +38,7 @@
                     },
                     "type": "MODEL"
                 },
-                "name": "bby-precinct-4-v2-464ac4cc-pred",
+                "name": "bby-precinct-4-v3-cdf4c04d-pred",
                 "replicas": 1
             }
         ]
