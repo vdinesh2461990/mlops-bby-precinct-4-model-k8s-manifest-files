@@ -1,0 +1,11 @@
+get_pods:
+	/bin/kubectl get pods -n default
+
+update_model_manifest:
+	@set -x && \
+		echo "updating model to version [${MODEL_VERSION}]" && \
+		( \
+			MANIFEST_FPATH=demo-manifests/model.json \
+			IMAGE_NAME="127.0.0.1:5000/vdinesh1990/bby-precinct-4" \
+			MODEL_NAME="bby-precinct-4" \
+			./update-model-manifest )

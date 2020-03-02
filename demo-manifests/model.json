@@ -1,0 +1,46 @@
+{
+    "apiVersion": "machinelearning.seldon.io/v1alpha2",
+    "kind": "SeldonDeployment",
+    "metadata": {
+        "labels": {
+            "app": "seldon"
+        },
+        "name": "bby-precinct-4-serv"
+    },
+    "spec": {
+        "name": "bby-precinct-4-v2-464ac4cc-dpl",
+        "oauth_key": "oauth-key",
+        "oauth_secret": "oauth-secret",
+        "predictors": [
+            {
+                "componentSpecs": [{
+                    "spec": {
+                        "containers": [
+                            {
+                                "image": "127.0.0.1:5000/vdinesh1990/bby-precinct-4:v2",
+                                "imagePullPolicy": "IfNotPresent",
+                                "name": "model",
+                                "resources": {
+                                    "requests": {
+                                        "memory": "1Mi"
+                                    }
+                                }
+                            }
+                        ],
+                        "terminationGracePeriodSeconds": 20
+                    }
+                }],
+                "graph": {
+                    "children": [],
+                    "name": "model",
+                    "endpoint": {
+                        "type" : "REST"
+                    },
+                    "type": "MODEL"
+                },
+                "name": "bby-precinct-4-v2-464ac4cc-pred",
+                "replicas": 1
+            }
+        ]
+    }
+}
